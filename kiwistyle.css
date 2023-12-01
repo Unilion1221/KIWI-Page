@@ -9,9 +9,11 @@
 header{
     background-color: rgb(21, 221, 21);
     width: 100%;
-    height: 150px;
+    height: 120px;
     display: flex;
     position: fixed;
+    align-items: center;
+    font-size: 24px;
 }
 
 body{
@@ -30,12 +32,14 @@ a{
 }
 
 .navbar{
-    min-height: 70px;
+    height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 8%;
     align-items: center;
     padding: 0 24px;
     width: 100%;
+    align-items: center;
 }
 
 .nav-menu{
@@ -47,7 +51,7 @@ a{
 
 .nav-branding img{
     transition: 0.3s;
-    height: 100px;
+    height: 80px;
 }
 
 .nav-link{
@@ -73,7 +77,7 @@ a{
     background: white;
 }
 
-@media(max-width:850px){
+@media(max-width:860px){
     .hamburger{
         display: block;
     }
@@ -97,7 +101,7 @@ a{
     .nav-menu{
         position: fixed;
         left: -100%;
-        top: 150px;
+        top: 100px;
         gap: 0;
         flex-direction: column;
         background-color: #61ab5a;
@@ -131,6 +135,14 @@ a{
     .nav-branding img{
         transition: 0.3s;
         height: 60px;
+    }
+
+    header{
+        height: 100px;
+    }
+
+    .navbar{
+        justify-content: space-between;
     }
 }
 
