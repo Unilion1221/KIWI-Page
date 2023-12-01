@@ -11,6 +11,11 @@ header{
     width: 100%;
     height: 150px;
     display: flex;
+    position: fixed;
+}
+
+body{
+    height: 1000vh;
 }
 
 /* NAVBAR */
@@ -20,7 +25,7 @@ li{
 }
 
 a{
-    color: white;
+    color: #563429;
     text-decoration: none;
 }
 
@@ -40,16 +45,17 @@ a{
     gap: 60px;
 }
 
-.nav-branding{
-    font-size: 3rem;
+.nav-branding img{
+    transition: 0.3s;
+    height: 100px;
 }
 
 .nav-link{
-    transition: 0.7s ease;
+    transition: 0.5s ease;
 }
 
 .nav-link:hover{
-    color: dodgerblue;
+    color: #f2ecae;
 }
 
 .hamburger{
@@ -67,9 +73,13 @@ a{
     background: white;
 }
 
-@media(max-width:1000px){
+@media(max-width:850px){
     .hamburger{
         display: block;
+    }
+
+    .hamburger span{
+        background-color: #f2ecae;
     }
 
     .hamburger.active .bar:nth-child(2){
@@ -90,7 +100,7 @@ a{
         top: 150px;
         gap: 0;
         flex-direction: column;
-        background-color: rgb(35, 131, 35);
+        background-color: #61ab5a;
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -98,16 +108,72 @@ a{
 
     .nav-item{
         margin: 16px 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .nav-menu.active{
         left: 0;
         font-size: 24px;
+        height: fit-content;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .nav-menu.active li{
+        width: 100%;
+        height: 100%;
+    }
+
+    .nav-branding img{
+        transition: 0.3s;
+        height: 60px;
     }
 }
 
 @media(max-width:1240px){
     .navbar{
-        font-size: 16px;
+        font-size: 20px;
     }
+}
+
+/* Under menu options */
+
+.under-menu-options{
+    display: none;
+    flex-direction: column;
+    background-color: rgb(22, 104, 22);
+}
+
+.under-menu-options li{
+    background-color: rgb(68, 129, 68);
+    height: 100px;
+    width: 100%;
+    border: 1px solid rgb(201, 167, 167);
+    display: flex;
+}
+
+.under-menu-options li a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.under-menu-options li a:hover{
+    background: rgb(21, 109, 21);
+}
+
+.m-drop-down a:hover{
+    color: #f2ecae;
+    height: 100%;
+}
+
+.m-drop-down{
+    gap: 30px;
 }
