@@ -1,5 +1,6 @@
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
+const header = document.querySelector("header");
 
 hamburger.addEventListener("click", ()=>{
     hamburger.classList.toggle("active");
@@ -37,22 +38,16 @@ for(let i = 0; i < mDropDown.length; i++){
 for(let i = 0; i < mDropDown.length; i++){
     mDropDown[i].addEventListener("mouseenter",()=>{
         let dropoDownStatus = mDropDown[i].childNodes[3].style.display;
-
         if(mDropDown[i].classList.contains("pc-drop-down") == true){
-            if(dropoDownStatus === "flex" ){
-                mDropDown[i].childNodes[3].style.display = "none";
-
-                mDropDown[i].childNodes[1].childNodes[1].classList.add("fa-caret-down");
-                mDropDown[i].childNodes[1].childNodes[1].classList.remove("fa-caret-up");
-            } else {
+            if(dropoDownStatus === "none" ){
                 closeAllpc(mDropDown);
                 mDropDown[i].childNodes[3].style.display = "flex";
-
                 mDropDown[i].childNodes[1].childNodes[1].classList.remove("fa-caret-down");
                 mDropDown[i].childNodes[1].childNodes[1].classList.add("fa-caret-up");
             }
         }
     })
+
 }
 
 
@@ -86,13 +81,6 @@ x.addEventListener("change", function() {
     myFunction(x);
 });
 
-// Close if pressed on any other place
-document.addEventListener("click", function(e){
-    if(!navMenu.contains(e.target)){
-        closeAll(mDropDown);
-    }
-});
-
 
 // Close if pressed on drop down undermenu option
 
@@ -116,6 +104,14 @@ function closeAll(arg){
     }
 }
 
+// Close if pressed on any other place
+document.addEventListener("click", function(e){
+    if(!navMenu.contains(e.target)){
+        closeAll(mDropDown);
+    }
+});
+
+
 function closeAllpc(arg){
     for(let i = 0; i < arg.length; i++){
         if(arg[i].classList.contains("pc-drop-down") == true){
@@ -125,3 +121,15 @@ function closeAllpc(arg){
         }
     }
 }
+
+
+document.addEventListener("mouseover", function(e){
+    if(!header.contains(e.target)){
+        closeAllpc(mDropDown);
+    }
+    document.querySelectorAll(".non-drop-down").forEach((element)=>{
+        if(element.contains(e.target)){
+            closeAllpc(mDropDown);
+        }
+    })
+});
