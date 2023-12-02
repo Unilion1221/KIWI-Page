@@ -203,5 +203,12 @@ a{
     color: #f2ecae;
 }
 
+:root{
+    -webkit-text-size-adjust: none;
+}
+
+root{
+    -webkit-text-size-adjust: none;
+}
 
 
