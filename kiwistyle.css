@@ -18,6 +18,7 @@ header{
 
 body{
     height: 1000vh;
+    -webkit-text-size-adjust: 100%
 }
 
 /* NAVBAR */
