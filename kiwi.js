@@ -35,7 +35,7 @@ for(let i = 0; i < mDropDown.length; i++){
 
 // FOR PC
 for(let i = 0; i < mDropDown.length; i++){
-    mDropDown[i].addEventListener("click",()=>{
+    mDropDown[i].addEventListener("mouseenter",()=>{
         let dropoDownStatus = mDropDown[i].childNodes[3].style.display;
 
         if(mDropDown[i].classList.contains("pc-drop-down") == true){
