@@ -36,16 +36,15 @@ a{
 .navbar{
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 8%;
     align-items: center;
-    padding: 0 24px;
     width: 100%;
-    align-items: center;
 }
 
 .nav-menu{
     display: flex;
+    height: fit-content;
     justify-content: space-between;
     align-items: center;
     gap: 60px;
@@ -110,6 +109,8 @@ a{
         width: 100%;
         text-align: center;
         transition: 0.3s;
+        display: flex;
+        height: fit-content;
     }
 
     .nav-item{
@@ -122,9 +123,9 @@ a{
 
     .nav-menu.active{
         left: 0;
+        display: flex;
         height: fit-content;
         width: 100%;
-        display: flex;
         justify-content: center;
     }
     
